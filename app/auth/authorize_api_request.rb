@@ -25,6 +25,7 @@ class AuthorizeApiRequest
             ExceptionHandler::InvalidToken,
             ("#{Message.invalid_token} #{e.message}")
         )
+    end
     # decode authentication token
     def decoded_auth_token
         @decoded_auth_token ||= JsonWebToken.decode(http_auth_header)
